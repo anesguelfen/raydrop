@@ -9,10 +9,10 @@ def capture_and_analyze_image(image_path="droplet.png"):
     diameters = [cv2.minEnclosingCircle(c)[1]*2 for c in contours if len(c) > 5]
     if diameters:
         avg_diameter = np.mean(diameters)
-        print(f"✅ Avg droplet diameter (pixels): {avg_diameter:.2f}")
+        print(f"Avg droplet diameter (pixels): {avg_diameter:.2f}")
         return avg_diameter
     else:
-        print("⚠️ No droplets detected.")
+        print("No droplets detected.")
         return None
 
 if __name__ == "__main__":
